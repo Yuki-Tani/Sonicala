@@ -18,7 +18,7 @@ public class Le4MusicPlayer extends MusicPlayer{
 	
 	public Le4MusicPlayer(Music music) {
 		super(music);
-		Arrays.stream(AudioSystem.getMixerInfo()).forEach(t -> System.out.println(">>>" +  t));
+		//Arrays.stream(AudioSystem.getMixerInfo()).forEach(t -> System.out.println(">>>" +  t));
 		try {
 			player = Player.builder(music.getFile())
 					.mixer(AudioSystem.getMixerInfo()[Constants.PLAYER_MIXIER_INDEX])

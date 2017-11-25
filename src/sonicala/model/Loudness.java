@@ -10,4 +10,12 @@ public class Loudness extends SoundElement{
 	public double getPower() {
 		return power;
 	}
+	
+	public boolean isLessThan(Loudness base) {
+		return power < base.getPower();
+	}
+	
+	public boolean isLessThan(double power) {
+		return this.power < power;
+	}
 }

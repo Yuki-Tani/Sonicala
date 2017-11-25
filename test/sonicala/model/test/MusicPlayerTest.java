@@ -5,6 +5,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import javax.sound.sampled.AudioSystem;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -18,6 +20,20 @@ import sonicala.model.Music;
 import sonicala.model.MusicPlayer;
 import sonicala.model.MusicSound;
 
+/*
+ * PCM_SIGNED 44100.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian (test240)
+ * PCM_SIGNED 16000.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian (test10)
+ * PCM_SIGNED 44100.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian (test60)
+ * 
+ * xxx PCM_SIGNED 44100.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian (test180)
+ * PCM_SIGNED 44100.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian (IGNITE_16bit)
+ * PCM_SIGNED 44100.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian (IGNITE_16_not_extention)
+ * 
+ * xxx PCM_FLOAT 16000.0 Hz, 32 bit, mono, 4 bytes/frame (IGNITE)
+ * xxx PCM_FLOAT 44100.0 Hz, 32 bit, stereo, 8 bytes/frame (test300)
+ * 
+ */
+
 public class MusicPlayerTest extends Application {
 	MusicPlayer player;
 	long time;
@@ -30,8 +46,12 @@ public class MusicPlayerTest extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		graph(stage);
-		URL url = getClass().getClassLoader().getResource("songs/music/test240.wav");
+		URL url = getClass().getClassLoader().getResource("songs/music/IGNITE.wav");
 		System.out.println(url);
+		
+		String formatInfo = AudioSystem.getAudioFileFormat(url).getFormat().toString();
+		System.out.println(formatInfo);
+		
 		Music music = new Music(url);
 		player = new Le4MusicPlayer(music);
 		ScheduledExecutorService service = Executors.newScheduledThreadPool(1);

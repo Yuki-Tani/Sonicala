@@ -12,11 +12,15 @@ public class BackCanvasPainter extends CanvasPainter{
 	private StarPainter starPainter;
 	private int number;
 	
+	ForwardCanvasPainter fp;
+	
 	public BackCanvasPainter(AnalyzeDataManager dataManager, MainPageController controller) {
 		starPainter = new StarPainter();
 		this.controller = controller;
 		this.dataManager = dataManager;
 		number = 0;
+		
+		fp = new ForwardCanvasPainter(dataManager, controller);
 	}
 	
 	public void paint(){
@@ -26,10 +30,15 @@ public class BackCanvasPainter extends CanvasPainter{
 		starPainter.setCurrentTime(box.getCurrentTime());
 		starPainter.setCurrentCanvas(canvas);
 		box.operateStars((star)->starPainter.paint(star));
+		
+		fp.paint(canvas);
+		
 		controller.setBackCanvas(canvas);
 	}
 	
 	public void setNumber(int i) {
 		number = i;
+		
+		fp.setNumber(i);
 	}
 }

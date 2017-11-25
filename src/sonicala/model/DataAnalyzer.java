@@ -16,24 +16,18 @@ public class DataAnalyzer {
 	 * @param voiceSound
 	 */
 	public void analyze(MusicSound musicSound, VoiceSound voiceSound) {
-//		System.out.println("analyze");
 		MusicTime time = musicSound.getPosition();
-		Spectrum spectrum = musicSound.getSpectrum();
-//System.out.println("sec:"+time.getAbsoluteSeconds());
-//System.out.println("spectrum:"+(spectrum!=null));
-		// starLineの作成
-		StarLine starLine = new StarLine(spectrum, time);
-//System.out.println("starLineSize:"+starLine.size());
+		Spectrum musicSpectrum = musicSound.getSpectrum();
+		StarLine starLine = new StarLine(musicSpectrum, time);
+		
+		Pitch voicePitch = voiceSound.getPitch();
+		Loudness voiceLoud = voiceSound.getLoudness();
 		
 		box.updateMusicTime(time);
 		box.updateStarSpace(starLine);
 		
-		// パイプ状態の算出
-		// 楽譜状態の算出
-		// 判定円の算出
-		// 
+		box.updatePitchRing(voicePitch, voiceLoud);
 		
-		//Pitch pitch = voiceSound.getPitch();
-		//Loudness loudness = voiceSound.getLoudness();
+		box.updateScaleRing(false,1.0);
 	}
 }

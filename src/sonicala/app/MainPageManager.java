@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import sonicala.controller.MainPageController;
 import sonicala.model.Song;
+import sonicala.view.element.PolarCanvas;
 
 public class MainPageManager {
 	
@@ -25,7 +26,7 @@ public class MainPageManager {
 		analyzeManager = new AnalyzeDataManager(song,playManager,recordManager);
 		paintManager = new PaintMainPageManager(analyzeManager,this.controller);
 		// 5秒後に自動スタート
-		mainService.schedule(this.controller::startAction, 5, TimeUnit.SECONDS);
+		mainService.schedule(this.controller::startAction, 2, TimeUnit.SECONDS);
 	}
 	
 	public void start() {
