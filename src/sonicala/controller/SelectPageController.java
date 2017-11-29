@@ -38,7 +38,7 @@ public class SelectPageController implements Initializable{
 	protected void selectAction(ObservableValue<? extends String> value, String prev,String now) {
 		// song オブジェクト受け渡し
 		/*test*/ 
-		URL url = getClass().getClassLoader().getResource("songs/information/ピースサイン.inf");
+		URL url = getClass().getClassLoader().getResource("songs/information/名前のない怪物.inf");
 		Path file;
 		try {
 			file = Paths.get(url.toURI());

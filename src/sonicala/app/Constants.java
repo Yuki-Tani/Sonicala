@@ -129,6 +129,7 @@ public class Constants {
 		BEAT_RING_COLOR_A = 0.2;
 	
 	public static final double
+		LYRICS_FUTURE_IN_TIME = 0.5,
 		LYRICS_FONT_SIZE = 20,
 		LYRICS_ZONE_WIDTH = 270,
 		LYRICS_ZONE_MARGIN_X = 30,
@@ -178,4 +179,10 @@ public class Constants {
 		INFORMATION_FILE_INDEX_VOCAL = "vocal",
 		INFORMATION_FILE_INDEX_DESCRIPTION = "description",
 		INFORMATION_FILE_TIME_LENGTH = "time length";
+	
+	public static final String
+		LYRICS_FILE_TEMPO_MARKER = "tempo",
+		LYRICS_FILE_BEAT_MARKER = "beat",
+		LYRICS_FILE_DELAY_MARKER = "delay",
+		LYRICS_FILE_TIMING_SEPARATOR = "-";
 }
