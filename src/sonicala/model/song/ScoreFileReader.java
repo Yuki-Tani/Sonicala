@@ -36,7 +36,7 @@ public class ScoreFileReader {
 		dataLine.add(new Note(new MusicTime(18.0), new MusicTime(18.5), new Pitch(11,PitchType.NOTE_NUMBER)));
 		return dataLine;
 	}
-	
+// TODO make beat reader	
 	public BeatRingSpace readBeatRings() {
 		
 		//test

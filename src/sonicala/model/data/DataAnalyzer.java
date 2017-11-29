@@ -2,6 +2,7 @@ package sonicala.model.data;
 
 import sonicala.model.parts.BeatRingSpace;
 import sonicala.model.parts.NoteSpace;
+import sonicala.model.parts.SentenceSpace;
 import sonicala.model.parts.StarLine;
 import sonicala.model.player.MusicSound;
 import sonicala.model.recorder.VoiceSound;
@@ -13,12 +14,14 @@ public class DataAnalyzer {
 	private AnalyzedDataBox box;
 	private NoteSpace noteDataLine;
 	private BeatRingSpace beatRing;
+	private SentenceSpace sentenceSpace;
 	
 	public DataAnalyzer(Song song, AnalyzedDataBox box) {
 		this.song = song;
 		this.box = box;
 		this.noteDataLine = song.getScore().getNoteLine();
 		this.beatRing = song.getScore().getBeatRingLine();
+		this.sentenceSpace = song.getLyrics().getSentenceSpace();
 	}
 	
 	/**
@@ -42,6 +45,7 @@ public class DataAnalyzer {
 		box.updatePitchRing(voicePitch, voiceLoud);
 		
 		box.updateScaleRing(false,1.0);
+		box.updateSentenceSpace(sentenceSpace);
 //System.out.println(">>>end analyze");
 	}
 }

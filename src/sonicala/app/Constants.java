@@ -127,6 +127,12 @@ public class Constants {
 		BEAT_RING_COLOR_G = 1,
 		BEAT_RING_COLOR_B = 1,
 		BEAT_RING_COLOR_A = 0.2;
+	
+	public static final double
+		LYRICS_FONT_SIZE = 20,
+		LYRICS_ZONE_WIDTH = 270,
+		LYRICS_ZONE_MARGIN_X = 30,
+		LYRICS_ZONE_MARGIN_Y = 50;
 												
 	public static final int
 		WINDOW_WIDTH = 600,

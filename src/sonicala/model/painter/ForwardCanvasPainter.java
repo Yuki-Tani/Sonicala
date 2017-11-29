@@ -16,6 +16,7 @@ public class ForwardCanvasPainter{
 	private PitchRingPainter pitchRingPainter;
 	private NotePainter notePainter;
 	private BeatRingPainter beatRingPainter;
+	private SentencePainter sentencePainter;
 	
 	public ForwardCanvasPainter(AnalyzeDataManager dataManager, MainPageController controller) {
 		this.controller = controller;
@@ -26,6 +27,7 @@ public class ForwardCanvasPainter{
 		notePainter = new NotePainter();
 		pitchRingPainter = new PitchRingPainter();
 		beatRingPainter = new BeatRingPainter();
+		sentencePainter = new SentencePainter();
 	}
 	
 	public void paint(PolarCanvas canvas){
@@ -48,6 +50,9 @@ public class ForwardCanvasPainter{
 		
 		pitchRingPainter.setCurrentCanvas(canvas);
 		pitchRingPainter.paint(box.getPitchRing());
+		
+		sentencePainter.setCurrentCanvas(canvas);
+		box.operateSentenceSpace(sentencePainter::paint);
 //		System.out.println(">>>>> "+box.getPitchRing().getR());
 		//controller.setForwardCanvas(canvas);
 	}

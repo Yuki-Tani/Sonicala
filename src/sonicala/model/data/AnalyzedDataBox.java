@@ -9,6 +9,8 @@ import sonicala.model.parts.Note;
 import sonicala.model.parts.NoteSpace;
 import sonicala.model.parts.PitchRing;
 import sonicala.model.parts.ScaleRing;
+import sonicala.model.parts.Sentence;
+import sonicala.model.parts.SentenceSpace;
 import sonicala.model.parts.Shaft;
 import sonicala.model.parts.Star;
 import sonicala.model.parts.StarLine;
@@ -28,6 +30,8 @@ public class AnalyzedDataBox extends DataBox{
 	private Shaft[] shafts;
 	private PitchRing pitchRing;
 	
+	private SentenceSpace sentenceSpace;
+	
 	
 	public AnalyzedDataBox() {
 		starSpace = new StarSpace();
@@ -40,6 +44,7 @@ public class AnalyzedDataBox extends DataBox{
 			shafts[i] = new Shaft();
 		}
 		pitchRing = PitchRing.makeInitialPitchRing();
+		sentenceSpace = new SentenceSpace();
 
 		inTime = currentTime.getFuture(Constants.NOTE_FUTURE_IN_TIME / 1000.0);
 		outTime = currentTime.getPast(Constants.NOTE_PAST_OUT_TIME / 1000.0);
@@ -65,6 +70,11 @@ public class AnalyzedDataBox extends DataBox{
 		beatRingSpace.removeAllOldBeatRing(outTime);
 		src.sendAllNewBeatRing(inTime, beatRingSpace);
 	}
+
+	public void updateSentenceSpace(SentenceSpace src) {
+		sentenceSpace.removeAllOldNote(currentTime);
+		src.sendAllNewNote(currentTime, sentenceSpace);
+	}
 	
 	public void updateScaleRing(boolean beat, double brightness) {
 		scaleRing = new ScaleRing(beat,brightness);
@@ -74,16 +84,21 @@ public class AnalyzedDataBox extends DataBox{
 		pitchRing = new PitchRing(newPitch, newLoudness, pitchRing);
 	}
 	
+	//////////////////////
 	public void operateStars(Consumer<? super Star> operation){
 		starSpace.forEach(line -> line.forEach(operation));
 	}
-	
+
 	public void operateNotes(Consumer<? super Note> operation) {
 		noteSpace.forEach(operation);
 	}
 	
 	public void operateBeatRing(Consumer<? super BeatRing> operation) {
 		beatRingSpace.forEach(operation);
+	}
+	
+	public void operateSentenceSpace(Consumer<? super Sentence> operation) {
+		sentenceSpace.forEach(operation);
 	}
 
 	public MusicTime getCurrentTime() {
