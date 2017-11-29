@@ -15,10 +15,10 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import sonicala.model.Le4MusicPlayer;
-import sonicala.model.Music;
-import sonicala.model.MusicPlayer;
-import sonicala.model.MusicSound;
+import sonicala.model.player.Le4MusicPlayer;
+import sonicala.model.player.MusicPlayer;
+import sonicala.model.player.MusicSound;
+import sonicala.model.song.Music;
 
 /*
  * PCM_SIGNED 44100.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian (test240)

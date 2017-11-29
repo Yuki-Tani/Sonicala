@@ -16,7 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import sonicala.app.Constants;
 import sonicala.app.Sonicala;
-import sonicala.model.Song;
+import sonicala.model.song.Song;
 
 public class SelectPageController implements Initializable{
 	public static final String pageURL = "../view/SelectPage.fxml";
@@ -38,7 +38,7 @@ public class SelectPageController implements Initializable{
 	protected void selectAction(ObservableValue<? extends String> value, String prev,String now) {
 		// song オブジェクト受け渡し
 		/*test*/ 
-		URL url = getClass().getClassLoader().getResource("songs/information/IGNITE.inf");
+		URL url = getClass().getClassLoader().getResource("songs/information/ピースサイン.inf");
 		Path file;
 		try {
 			file = Paths.get(url.toURI());

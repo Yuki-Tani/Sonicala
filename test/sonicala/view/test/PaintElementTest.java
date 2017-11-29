@@ -17,7 +17,8 @@ import javafx.stage.Stage;
 import sonicala.view.element.CircleOnPole;
 import sonicala.view.element.PolarCanvas;
 import sonicala.view.element.RectangeOnPole;
-import sonicala.view.element.ShineLine;
+import sonicala.view.element.ShineFanOnPole;
+import sonicala.view.element.ShineRectangleOnPole;
 import sonicala.view.element.ShineRingOnPole;
 import sonicala.view.element.TrailingCircleOnPole;
 
@@ -47,7 +48,7 @@ public class PaintElementTest extends Application{
 	private CircleOnPole circle = new CircleOnPole();
 	private ShineRingOnPole ring = new ShineRingOnPole();
 	private RectangeOnPole rect = new RectangeOnPole();
-	private ShineLine line = new ShineLine();
+	private ShineRectangleOnPole line = new ShineRectangleOnPole();
 	private TrailingCircleOnPole trail = new TrailingCircleOnPole();
 	
 	public void paint() {
@@ -92,6 +93,9 @@ public class PaintElementTest extends Application{
 				 200, 90, 20, 5, 2, 
 				 100, -90, 10, 3, 1,
 				 50, canvas);
+		 ShineFanOnPole fan = new ShineFanOnPole();
+		 fan.paint(100,200,0,60,10,0.4, canvas);
+		 
 		 
 		Platform.runLater(()->pane.getChildren().set(0,canvas));
 	}

@@ -12,9 +12,9 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import sonicala.model.Le4VoiceRecorder;
-import sonicala.model.VoiceRecorder;
-import sonicala.model.VoiceSound;
+import sonicala.model.recorder.Le4VoiceRecorder;
+import sonicala.model.recorder.VoiceRecorder;
+import sonicala.model.recorder.VoiceSound;
 
 public class VoiceRecorderTest extends Application{
 	VoiceRecorder recorder;

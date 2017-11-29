@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import sonicala.controller.MainPageController;
-import sonicala.model.Song;
+import sonicala.model.song.Song;
 import sonicala.view.element.PolarCanvas;
 
 public class MainPageManager {

@@ -5,8 +5,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import sonicala.controller.MainPageController;
-import sonicala.model.BackCanvasPainter;
-import sonicala.model.ForwardCanvasPainter;
+import sonicala.model.painter.BackCanvasPainter;
+import sonicala.model.painter.ForwardCanvasPainter;
 
 public class PaintMainPageManager {
 	

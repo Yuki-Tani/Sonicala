@@ -5,8 +5,8 @@ import java.net.URL;
 import java.nio.file.Paths;
 
 import sonicala.app.Constants;
-import sonicala.model.Song;
-import sonicala.model.SongInformation;
+import sonicala.model.song.Song;
+import sonicala.model.song.SongInformation;
 
 public class FileLoadTest {
 	public static void main(String[] args) {

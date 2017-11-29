@@ -1,9 +1,9 @@
 package sonicala.app;
 
-import sonicala.model.Le4MusicPlayer;
-import sonicala.model.MusicPlayer;
-import sonicala.model.MusicSound;
-import sonicala.model.Song;
+import sonicala.model.player.Le4MusicPlayer;
+import sonicala.model.player.MusicPlayer;
+import sonicala.model.player.MusicSound;
+import sonicala.model.song.Song;
 
 public class PlayMusicManager {
 	

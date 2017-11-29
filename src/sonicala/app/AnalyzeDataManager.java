@@ -4,15 +4,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import sonicala.model.AnalyzedDataBox;
-import sonicala.model.DataAnalyzer;
-import sonicala.model.Song;
+import sonicala.model.data.AnalyzedDataBox;
+import sonicala.model.data.DataAnalyzer;
+import sonicala.model.song.Song;
 
 public class AnalyzeDataManager {
 	
 	private ScheduledExecutorService analyzeService;
 	private DataAnalyzer analyzer;
 	private AnalyzedDataBox box;
+	private Song song;
 	private PlayMusicManager musicManager;
 	private RecordVoiceManager voiceManager;
 	
@@ -23,6 +24,7 @@ public class AnalyzeDataManager {
 		analyzer = new DataAnalyzer(song,box);
 		this.musicManager = musicManager;
 		this.voiceManager = voiceManager;
+		this.song = song;
 	}
 	
 	public void start() {
@@ -44,6 +46,10 @@ public class AnalyzeDataManager {
 	
 	public AnalyzedDataBox getAnalyzedDataBox() {
 		return box;
+	}
+	
+	public Song getSong() {
+		return song;
 	}
 	
 	private void analyze() {

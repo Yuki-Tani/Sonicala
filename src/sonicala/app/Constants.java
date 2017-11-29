@@ -5,13 +5,20 @@ package sonicala.app;
  */
 public class Constants {
 	
+	// player
+	public static final int
+		PLAYER_MIXIER_INDEX = 1;
+	// recorder
+	public static final int
+		RECORDER_MIXIER_INDEX = 5;
+	
 	public static final int
 		// 分析に使用するスレッド数
 		ANALYZE_DATA_MANAGER_THREAD_QUANTITY = 3,
 		// 分析を開始するまでの時間(ms)
 		ANALYZE_DATA_START_TIME = 50,
 		// 分析を行う周期 (ms)
-		ANALYZE_DATA_FREQUENCY = 50;
+		ANALYZE_DATA_FREQUENCY = 100;
 	
 	public static final int
 		// 描画に使用するスレッド数
@@ -20,23 +27,26 @@ public class Constants {
 		// 背景描画を開始するまでの時間(ms)
 		PAINT_BACK_START_TIME = 200,
 		// 背景描画を行う周期(ms)
-		PAINT_BACK_FREQUENCY = 50,
+		PAINT_BACK_FREQUENCY = 100,
 		// 前景描画を開始するまでの時間(ms)
 		PAINT_FORWARD_START_TIME = 200,
 		// 前景描画を行う周期(ms)
-		PAINT_FORWARD_FREQUENCY = 120;
+		PAINT_FORWARD_FREQUENCY = 150;
 	
 	public static final int
 		// １つの時間軸に存在する星の数
 		STAR_QUANTITY_ON_STAR_LINE = 180,
 		// 背景に存在する時間軸の数
-		STAR_LINE_QUANTITY_IN_STAR_SPACE = 40,
+		STAR_LINE_QUANTITY_IN_STAR_SPACE = 30,
 		// 星の生存時間(ms)
-		STAR_LIFE = STAR_LINE_QUANTITY_IN_STAR_SPACE * ANALYZE_DATA_FREQUENCY,
-	
-		STAR_SPACE_START_DEGREE = 200,
-		STAR_SPACE_END_DEGREE = -180,
-	
+		STAR_LIFE = STAR_LINE_QUANTITY_IN_STAR_SPACE * ANALYZE_DATA_FREQUENCY;
+
+	public static final double
+		STAR_SPACE_START_FREQUENCY = 0,
+		STAR_SPACE_END_FREQUENCY = 16000,
+		STAR_SPACE_START_DEGREE = 240,
+		STAR_SPACE_END_DEGREE = -120,
+
 		STAR_POWER_MIN = 50,
 		STAR_POWER_MAX = 130;
 	
@@ -46,7 +56,7 @@ public class Constants {
 		STAR_SPACE_DISTANCE_RATE = 1.0,
 		STAR_SPACE_VISIBLE_RATE = 0.8,
 		STAR_COLOR_R = 0.0,
-		STAR_COLOR_POW_R = 0,
+		STAR_COLOR_POW_R = 0.5,
 		STAR_COLOR_G = 0.0,
 		STAR_COLOR_POW_G = 0,		
 		STAR_COLOR_B = 0,
@@ -56,8 +66,8 @@ public class Constants {
 		STAR_POWER_FILTER = 3;
 	
 	public static final double
-		PITCH_RING_LOUDNESS_MIN = 50,
-		PITCH_RING_LOUDNESS_MAX = 80,
+		PITCH_RING_LOUDNESS_MIN = 55,
+		PITCH_RING_LOUDNESS_MAX = 115,
 		PITCH_RING_RADIUS_MAX = 50,
 		PITCH_RING_WIDTH_MAX = 10,
 		PITCH_RING_SHINE_MAX = 5,
@@ -65,7 +75,7 @@ public class Constants {
 		PITCH_RING_AFTERIMAGE_MAX_DEGREE = 30,
 		PITCH_RING_AFTERIMAGE_START_OPAQUE = 0.4,
 		PITCH_RING_AFTERIMAGE_END_OPAQUE = 0.1,
-		PITCH_RING_AFTERIMAGE_END_RADIUS_RATE = 0.6,
+		PITCH_RING_AFTERIMAGE_END_RADIUS_RATE = 0.5,
 		PITCH_RING_POWER_FILTER = 3,
 		PITCH_RING_COLOR_R = 1,
 		PITCH_RING_COLOR_G = 1,
@@ -74,12 +84,12 @@ public class Constants {
 	
 	public static final double
 		SCALE_RING_POSITION_RATE = 0.75,
-		SCALE_RING_WIDTH = 15,
-		SCALE_RING_BRIGHTNESS_WIDTH = 5,
+		SCALE_RING_WIDTH = 10,
+		SCALE_RING_BRIGHTNESS_WIDTH = 3,
 		SCALE_RING_COLOR_R = 0,
-		SCALE_RING_COLOR_G = 0.8,
-		SCALE_RING_COLOR_B = 0.8,
-		SCALE_RING_COLOR_A = 0.3;
+		SCALE_RING_COLOR_G = 0,
+		SCALE_RING_COLOR_B = 1,
+		SCALE_RING_COLOR_A = 0.5;
 	
 	public static final int
 		SHAFT_QUANTITY = 12,
@@ -95,9 +105,32 @@ public class Constants {
 		SHAFT_SMOKE_COLOR_B = 1.0,
 		SHAFT_SMOKE_COLOR_A = 0.3;
 	
+	public static final double
+		NOTE_FUTURE_IN_TIME = 5000, //(ms)
+		NOTE_PAST_OUT_TIME = 2000,
+		NOTE_START_POSITION_RATE = 0.1,
+		NOTE_SINGLE_RANGE = 30,
+		NOTE_FRAME_COLOR_R = 0,
+		NOTE_FRAME_COLOR_G = 0,
+		NOTE_FRAME_COLOR_B = 1,
+		NOTE_FRAME_COLOR_A = 1,
+		NOTE_INNER_COLOR_R = 0.2,
+		NOTE_INNER_COLOR_G = 0.2,
+		NOTE_INNER_COLOR_B = 0.6,
+		NOTE_INNER_COLOR_A = 0.6,
+		NOTE_FRAME_WIDTH = 5,
+		NOTE_FRAME_SHINE_RATE = 0.5;
+	
+	public static final double
+		BEAT_RING_STANDARD_SIZE = 0.1,
+		BEAT_RING_COLOR_R = 1,
+		BEAT_RING_COLOR_G = 1,
+		BEAT_RING_COLOR_B = 1,
+		BEAT_RING_COLOR_A = 0.2;
+												
 	public static final int
-	WINDOW_WIDTH = 600,
-	WINDOW_HEIGHT = 600;
+		WINDOW_WIDTH = 600,
+		WINDOW_HEIGHT = 600;
 	
 	// FFT
 	public static final double 
@@ -124,7 +157,7 @@ public class Constants {
 		// 楽譜ファイルのあるディレクトリ(res/からの相対パス /で終わらせる)
 		RESOURCE_DIRECTORY_PATH_SCORE = "songs/score/",
 		// 楽譜ファイルの拡張子(.をつける)
-		RESOURCE_SCORE_FILE_EXTENSION = ".scr",
+		RESOURCE_SCORE_FILE_EXTENSION = ".sco",
 		
 		// 歌詞ファイルのあるディレクトリ(res/からの相対パス /で終わらせる)
 		RESOURCE_DIRECTORY_PATH_LYRICS = "songs/lyrics/",
@@ -139,12 +172,4 @@ public class Constants {
 		INFORMATION_FILE_INDEX_VOCAL = "vocal",
 		INFORMATION_FILE_INDEX_DESCRIPTION = "description",
 		INFORMATION_FILE_TIME_LENGTH = "time length";
-
-	
-	// player
-	public static final int
-		PLAYER_MIXIER_INDEX = 0;
-	// recorder
-	public static final int
-		RECORDER_MIXIER_INDEX = 3;
 }

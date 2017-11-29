@@ -7,7 +7,7 @@ import javafx.scene.input.KeyEvent;
 import sonicala.app.Constants;
 import sonicala.app.MainPageManager;
 import sonicala.app.Sonicala;
-import sonicala.model.Song;
+import sonicala.model.song.Song;
 import sonicala.view.MainPage;
 
 public class MainPageController {
