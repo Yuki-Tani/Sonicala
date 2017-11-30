@@ -7,10 +7,10 @@ public class Constants {
 	
 	// player
 	public static final int
-		PLAYER_MIXIER_INDEX = 1;
+		PLAYER_MIXIER_INDEX = 1;//0;
 	// recorder
 	public static final int
-		RECORDER_MIXIER_INDEX = 5;
+		RECORDER_MIXIER_INDEX = 6;//3;
 	
 	public static final int
 		// 分析に使用するスレッド数
@@ -48,7 +48,7 @@ public class Constants {
 		STAR_SPACE_END_DEGREE = -120,
 
 		STAR_POWER_MIN = 50,
-		STAR_POWER_MAX = 130;
+		STAR_POWER_MAX = 120;
 	
 	public static final double
 	// 標準の星の大きさ
@@ -66,6 +66,7 @@ public class Constants {
 		STAR_POWER_FILTER = 3;
 	
 	public static final double
+		PITCH_RING_POSITION_RATE = 0.85,
 		PITCH_RING_LOUDNESS_MIN = 55,
 		PITCH_RING_LOUDNESS_MAX = 115,
 		PITCH_RING_RADIUS_MAX = 50,
@@ -83,7 +84,7 @@ public class Constants {
 		PITCH_RING_COLOR_A = 0.5;
 	
 	public static final double
-		SCALE_RING_POSITION_RATE = 0.75,
+		SCALE_RING_POSITION_RATE = 0.5,
 		SCALE_RING_WIDTH = 10,
 		SCALE_RING_BRIGHTNESS_WIDTH = 3,
 		SCALE_RING_COLOR_R = 0,
@@ -93,8 +94,8 @@ public class Constants {
 	
 	public static final int
 		SHAFT_QUANTITY = 12,
-		SHAFT_START_DEGREE = 180,
-		SHAFT_END_DEGREE = -180;
+		SHAFT_START_DEGREE = 240,
+		SHAFT_END_DEGREE = -120;
 	public static final double
 		SHAFT_START_POSITION_RATE = 0.05,
 		SHAFT_END_POSITION_RATE = 0.8,
@@ -123,10 +124,10 @@ public class Constants {
 	
 	public static final double
 		BEAT_RING_STANDARD_SIZE = 0.1,
-		BEAT_RING_COLOR_R = 1,
-		BEAT_RING_COLOR_G = 1,
+		BEAT_RING_COLOR_R = 0.5,
+		BEAT_RING_COLOR_G = 0.5,
 		BEAT_RING_COLOR_B = 1,
-		BEAT_RING_COLOR_A = 0.2;
+		BEAT_RING_COLOR_A = 0.5;
 	
 	public static final double
 		LYRICS_FUTURE_IN_TIME = 0.5,
@@ -185,4 +186,11 @@ public class Constants {
 		LYRICS_FILE_BEAT_MARKER = "beat",
 		LYRICS_FILE_DELAY_MARKER = "delay",
 		LYRICS_FILE_TIMING_SEPARATOR = "-";
+	
+	public static final String
+		SCORE_FILE_TEMPO_MARKER = "tempo",
+		SCORE_FILE_BEAT_MARKER = "beat",
+		SCORE_FILE_DELAY_MARKER = "delay",
+		SCORE_FILE_END_MARKER = "end",
+		SCORE_FILE_TIMING_SEPARATOR = "-";
 }

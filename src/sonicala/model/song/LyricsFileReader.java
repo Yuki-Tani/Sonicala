@@ -51,7 +51,7 @@ public class LyricsFileReader {
 						if(timing.length == 1) { // direct timing
 							t = Double.parseDouble(timing[0]);
 						}else {
-							if(tempo == 0 && beat == 0) 
+							if(tempo == 0 || beat == 0) 
 								throw new LyricsException(ErrorConstants.LYR_01);
 							double noteNum = 0;
 							double coefficient = beat;
@@ -62,7 +62,7 @@ public class LyricsFileReader {
 							t = noteNum * 60.0 / tempo;
 						}
 						
-						t -= Constants.LYRICS_FUTURE_IN_TIME;
+						t = t - Constants.LYRICS_FUTURE_IN_TIME + delay;
 						// add prev lyrics
 						if(prevLyric != null) {
 							dataLine.add(new Sentence(
@@ -89,7 +89,7 @@ public class LyricsFileReader {
 				line = reader.readLine();
 			}
 		} catch (IOException e) {
-			System.out.println("information file reader error[SongInformationFIleReader]");
+			System.out.println("lyrics file reader error[LyricsFIleReader]");
 			e.printStackTrace();
 		} 
 		

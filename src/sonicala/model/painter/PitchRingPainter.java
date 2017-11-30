@@ -11,6 +11,7 @@ public class PitchRingPainter {
 	private TrailingCircleOnPole circle;
 	private PolarCanvas currentCanvas;
 	private double currentRadius;
+	private double singleDegree;
 	
 	public PitchRingPainter() {
 		circle = new TrailingCircleOnPole();
@@ -24,6 +25,7 @@ public class PitchRingPainter {
 		circle.setAfterImageOpaque(
 				Constants.PITCH_RING_AFTERIMAGE_START_OPAQUE,
 				Constants.PITCH_RING_AFTERIMAGE_END_OPAQUE);
+		singleDegree = (Constants.SHAFT_END_DEGREE - Constants.SHAFT_START_DEGREE)/12;
 	}
 	
 	public void paint(PitchRing ring) {
@@ -51,11 +53,11 @@ public class PitchRingPainter {
 		double windowShortLength = Math.min(
 				currentCanvas.getWidth()/2,
 				currentCanvas.getHeight()/2);
-		currentRadius = windowShortLength*Constants.SCALE_RING_POSITION_RATE;
+		currentRadius = windowShortLength*Constants.PITCH_RING_POSITION_RATE;
 	}
 	
 	private double culcTheta(double x) {
-		return x * (-30);
+		return x * singleDegree + Constants.SHAFT_START_DEGREE;
 	}
 	
 	private double culcPowerRate(double r) {

@@ -9,4 +9,9 @@ public class ErrorConstants {
 		LYR_SYNTAX = "lyrics file syntax error.",
 		LYR_01 = "please set TEMPO and BEAT.",
 		LYR_02 = "number parse error!";
+	public static final String
+		SCO_SYNTAX = "score file syntax error.",
+		SCO_01 = "please set TEMPO, BEAT, and END.",
+		SCO_02 = "number parse error!",
+		SCO_03 = "note name error!";
 }

@@ -19,6 +19,7 @@ public class NotePainter {
 	private double rCof;
 	private double minCof;
 	private double halfRange;
+	private double singleDegree;
 	
 	public NotePainter() {
 		fan = new ShineFanOnPole();
@@ -38,6 +39,7 @@ public class NotePainter {
 				/ (Constants.SCALE_RING_POSITION_RATE * Constants.NOTE_FUTURE_IN_TIME);
 		minCof = rCof * Constants.NOTE_START_POSITION_RATE * 0.1;
 		halfRange = Constants.NOTE_SINGLE_RANGE / 2;
+		singleDegree = (Constants.SHAFT_END_DEGREE -  Constants.SHAFT_START_DEGREE) / 12;
 	}
 	
 	public void paint(Note note) {
@@ -71,6 +73,6 @@ public class NotePainter {
 	}
 	
 	private double culcTheta(double y) {
-		return y * (-30);
+		return y * singleDegree + Constants.SHAFT_START_DEGREE;
 	}
 }
