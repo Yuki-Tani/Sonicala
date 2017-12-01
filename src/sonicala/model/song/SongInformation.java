@@ -83,4 +83,8 @@ public class SongInformation {
 				+ fileName
 				+ Constants.RESOURCE_LYRICS_FILE_EXTENSION);
 	}
+	
+	public SongInformationDetails getDeatails() {
+		return details;
+	}
 }

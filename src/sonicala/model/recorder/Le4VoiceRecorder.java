@@ -12,14 +12,7 @@ public class Le4VoiceRecorder extends VoiceRecorder{
 	
 	public Le4VoiceRecorder() {
 		super();
-		Mixer.Info[] info = AudioSystem.getMixerInfo();
-		for(int i=0; i<info.length; i++) {
-			System.out.println("Mixer No."+i
-					+"\n   Name: "+info[i].getName()
-					+"\n   Vendor: "+info[i].getVendor()
-					+"\n   Version: "+info[i].getVersion()
-					+"\n   Info: "+info[i].getDescription());
-		}
+		
 		try {
 			recorder = Recorder.builder()
 					.mixer(AudioSystem.getMixerInfo()[Constants.RECORDER_MIXIER_INDEX])

@@ -6,11 +6,11 @@ package sonicala.app;
 public class Constants {
 	
 	// player
-	public static final int
-		PLAYER_MIXIER_INDEX = 1;//0;
+	public static int
+		PLAYER_MIXIER_INDEX = 0;
 	// recorder
-	public static final int
-		RECORDER_MIXIER_INDEX = 6;//3;
+	public static int
+		RECORDER_MIXIER_INDEX = 6;
 	
 	public static final int
 		// 分析に使用するスレッド数
@@ -60,9 +60,9 @@ public class Constants {
 		STAR_COLOR_G = 0.0,
 		STAR_COLOR_POW_G = 0,		
 		STAR_COLOR_B = 0,
-		STAR_COLOR_POW_B = 1.0,
-		STAR_COLOR_A = 0.0,
-		STAR_COLOR_POW_A = 1.0,
+		STAR_COLOR_POW_B = 1,
+		STAR_COLOR_A = 0,
+		STAR_COLOR_POW_A = 1,
 		STAR_POWER_FILTER = 3;
 	
 	public static final double
@@ -179,7 +179,7 @@ public class Constants {
 		INFORMATION_FILE_INDEX_SUB_NAME = "sub name",
 		INFORMATION_FILE_INDEX_VOCAL = "vocal",
 		INFORMATION_FILE_INDEX_DESCRIPTION = "description",
-		INFORMATION_FILE_TIME_LENGTH = "time length";
+		INFORMATION_FILE_TIME_INDEX_LENGTH = "time length";
 	
 	public static final String
 		LYRICS_FILE_TEMPO_MARKER = "tempo",

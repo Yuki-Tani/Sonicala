@@ -18,6 +18,7 @@ public class Sonicala extends Application {
 		stage.showingProperty().addListener(
 				(obsv,oldValue,newValue) -> {if(oldValue && !newValue) close();});
 		StartPageController.showPage();
+		stage.setTitle("Sonicala");
 		stage.show();
 	}
 	
@@ -35,10 +36,14 @@ public class Sonicala extends Application {
 	}
 	
 	public static double getHeight() {
+		if(Double.isNaN(appStage.getHeight()))
+			return Constants.WINDOW_HEIGHT;
 		return appStage.getHeight();
 	}
 	
 	public static double getWidth() {
+		if(Double.isNaN(appStage.getWidth()))
+			return Constants.WINDOW_WIDTH;
 		return appStage.getWidth();
 	}
 
